@@ -7,6 +7,7 @@ package com.example.backend.argentinaPrograma.controller;
 import com.example.backend.argentinaPrograma.model.Contacto;
 import com.example.backend.argentinaPrograma.service.IContactoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Corrales Ulises
  */
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class ContactoController {
 
