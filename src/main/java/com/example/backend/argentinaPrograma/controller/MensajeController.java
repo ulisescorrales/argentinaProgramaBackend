@@ -35,7 +35,7 @@ public class MensajeController {
     }    
     @PostMapping("/mensaje/crear")
     public void crearMensaje(@RequestBody Mensaje mensaje) {
-        interMensaje.saveMensaje(mensaje);        
+        interMensaje.saveMensaje(mensaje);                
     }
     @DeleteMapping("/mensaje/borrar/{id}")
     public String deleteMensaje(@PathVariable Long id) {

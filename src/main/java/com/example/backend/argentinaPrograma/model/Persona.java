@@ -4,9 +4,8 @@
  */
 package com.example.backend.argentinaPrograma.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,15 +16,14 @@ import lombok.Setter;
  */
 @Getter @Setter
 @Entity
-public class Mensaje {
+public class Persona {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
-    private int id;
-    private String organizacion;    
-    private String contacto;    
-    private String mensaje;
-
-   
-    
-    
+    private Long idPersona;    
+    private String nombre;        
+    private String apellido;    
+    private String fechaNac;    
+    private String nacionalidad;
+    private String sobreMi;
+    private String fotoPerfil;
+    private String fotoFondo;    
 }
