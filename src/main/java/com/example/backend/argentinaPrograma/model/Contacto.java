@@ -4,7 +4,6 @@
  */
 package com.example.backend.argentinaPrograma.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -14,16 +13,14 @@ import lombok.Setter;
  *
  * @author Corrales Ulises
  */
-@Getter @Setter
 @Entity
-public class Persona {
+ @Getter  @Setter
+public class Contacto {
     @Id
-    private long idPersona;    
-    private String nombre;        
-    private String apellido;    
-    private String fechaNac;    
-    private String nacionalidad;
-    private String sobreMi;
-    private String fotoPerfil;
-    private String fotoFondo;    
+    private String id_contacto;
+    private String telefono;
+    private String facebook;
+    private String twitter;
+    private String linkedin;
+    private String email;
 }
