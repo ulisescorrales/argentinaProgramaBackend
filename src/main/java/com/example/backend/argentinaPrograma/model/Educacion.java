@@ -21,8 +21,10 @@ public class Educacion {
     @Id
     private long idEstudios;
     private String titulo;
+    private String logo;
     private String institucion;
     private int anioIngreso;
+    private int anioFinalizacion;
     private int duracion;
     private int materiasAprobadas;
 }
