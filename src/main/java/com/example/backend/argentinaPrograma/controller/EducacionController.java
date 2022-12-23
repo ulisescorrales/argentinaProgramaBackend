@@ -45,6 +45,8 @@ public class EducacionController {
     @PutMapping("/educacion/editar/{id}")
     public void putEducacion(@PathVariable Long id, @RequestParam String institucion,
             @RequestParam int anioIngreso,
+            @RequestParam int anioFinalizacion,
+            @RequestParam String logo,
             @RequestParam int duracion,
             @RequestParam int materiasTotales,
             @RequestParam int materiasAprobadas,
@@ -55,6 +57,8 @@ public class EducacionController {
         ed.setInstitucion(institucion);
         ed.setMateriasAprobadas(materiasAprobadas);
         ed.setTitulo(titulo);
+        ed.setAnioFinalizacion(anioFinalizacion);
+        ed.setLogo(logo);
 
         interEducacion.saveEducacion(ed);
     }
