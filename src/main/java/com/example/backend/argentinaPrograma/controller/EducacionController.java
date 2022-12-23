@@ -49,7 +49,7 @@ public class EducacionController {
             @RequestParam String logo,
             @RequestParam int duracion,
             @RequestParam int materiasTotales,
-            @RequestParam int materiasAprobadas,
+            @RequestParam int materiasAprobadas,            
             @RequestParam String titulo) {
         Educacion ed = interEducacion.findEducacion(id);
         ed.setAnioIngreso(anioIngreso);
@@ -59,6 +59,7 @@ public class EducacionController {
         ed.setTitulo(titulo);
         ed.setAnioFinalizacion(anioFinalizacion);
         ed.setLogo(logo);
+        ed.setMateriasTotales(materiasTotales);
 
         interEducacion.saveEducacion(ed);
     }
