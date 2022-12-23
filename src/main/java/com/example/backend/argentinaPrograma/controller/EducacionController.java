@@ -38,7 +38,7 @@ public class EducacionController {
     }
 
     @GetMapping("/educacion/{id}")
-    public Educacion finEducacion(@PathVariable Long id) {
+    public Educacion findEducacion(@PathVariable Long id) {
         return interEducacion.findEducacion(id);
     }
 

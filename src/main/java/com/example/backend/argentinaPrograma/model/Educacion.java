@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Value;
 
 /**
  *
@@ -30,5 +31,5 @@ public class Educacion {
     private int anioFinalizacion;
     private int duracion;
     private int materiasAprobadas;
-    private int materiasTotales;
+    private int materiasTotales;        
 }
