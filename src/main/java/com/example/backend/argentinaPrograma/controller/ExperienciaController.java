@@ -38,24 +38,20 @@ public class ExperienciaController {
         interExperiencia.saveExperiencia(ed);
     }
 
-    @GetMapping("/experiencia/{id}")
+    @GetMapping("/experiencia/traer/{id}")
     public Experiencia finEducacion(@PathVariable Long id) {
         return interExperiencia.findExperiencia(id);
     }
 
     @PutMapping("/experiencia/editar/{id}")
     public void modificarExperiencia(@PathVariable Long id,
-            @RequestBody String organizacion,
-            @RequestBody Date inicio,
-            @RequestBody Date fin,
-            @RequestBody String descripcion,
-            @RequestBody String logo) {
+            @RequestBody Experiencia unaExp) {
         Experiencia exp = interExperiencia.findExperiencia(id);
-        exp.setDescripcion(descripcion);
-        exp.setFin(fin);
-        exp.setInicio(inicio);
-        exp.setLogo(logo);
-        exp.setOrganizacion(organizacion);
+        exp.setDescripcion(unaExp.getDescripcion());
+        exp.setFin(unaExp.getFin());
+        exp.setInicio(unaExp.getInicio());
+        exp.setLogo(unaExp.getLogo());
+        exp.setOrganizacion(unaExp.getOrganizacion());
 
         interExperiencia.saveExperiencia(exp);
     }

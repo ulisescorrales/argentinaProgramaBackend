@@ -14,14 +14,14 @@ import lombok.Setter;
  * @author Corrales Ulises
  */
 @Entity
- @Getter  @Setter
-public class Contacto {
+@Getter @Setter
+public class Domicilio {
     @Id
-    private Long id_contacto;
-    private String telefono;
-    private String facebook;
-    private String twitter;
-    private String linkedin;
-    private String email;
-    private String github;
+    private Long idDomicilio;
+    private String pais;
+    private String provincia;
+    private String ciudad;
+    private String calle;
+    private String numero;
+    private String codigoPostal;
 }
