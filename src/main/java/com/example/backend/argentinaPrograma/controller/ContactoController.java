@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -30,18 +30,14 @@ public class ContactoController {
     }
 
     @PutMapping("/contacto/editar")
-    public void editarContacto(@RequestParam String telefono,
-            @RequestParam String email,
-            @RequestParam String linkedin,
-            @RequestParam String twitter,
-            @RequestParam String fb,
-            @RequestParam String github) {
+    public void editarContacto(@RequestBody Contacto unContacto) {
         Contacto contacto=interContacto.traerContacto();
-        contacto.setEmail(email);
-        contacto.setFacebook(fb);
-        contacto.setLinkedin(linkedin);
-        contacto.setTelefono(telefono);
-        contacto.setTwitter(twitter);
+        contacto.setEmail(unContacto.getEmail());
+        contacto.setFacebook(unContacto.getFacebook());
+        contacto.setLinkedin(unContacto.getLinkedin());
+        contacto.setTelefono(unContacto.getTelefono());
+        contacto.setTwitter(unContacto.getTwitter());
+        contacto.setGithub(unContacto.getGithub());
         
         interContacto.saveContacto(contacto);
     }

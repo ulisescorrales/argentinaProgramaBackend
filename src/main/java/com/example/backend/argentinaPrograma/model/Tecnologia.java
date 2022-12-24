@@ -5,6 +5,8 @@
 package com.example.backend.argentinaPrograma.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +19,8 @@ import lombok.Setter;
 @Getter @Setter
 public class Tecnologia {
     @Id
-    private long idTecnologia;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    private Long idTecnologia;
     private String descripcion;
     private String logo;
 }

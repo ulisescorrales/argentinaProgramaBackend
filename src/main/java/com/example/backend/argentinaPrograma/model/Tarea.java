@@ -14,14 +14,12 @@ import lombok.Setter;
  * @author Corrales Ulises
  */
 @Entity
- @Getter  @Setter
-public class Contacto {
+@Getter @Setter
+public class Tarea {
     @Id
-    private Long id_contacto;
-    private String telefono;
-    private String facebook;
-    private String twitter;
-    private String linkedin;
-    private String email;
-    private String github;
+    private Long idTarea;
+    private Long idExperiencia;
+    private String titulo;
+    private String descripcion;
+    private String repositorio;
 }

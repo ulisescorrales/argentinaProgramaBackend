@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +34,7 @@ public class EducacionController {
     }
 
     @PostMapping("/educacion/agregar")
-    public void putEducacion(Educacion ed) {
+    public void putEducacion(@RequestBody Educacion ed) {
         interEducacion.saveEducacion(ed);
     }
 
@@ -43,24 +44,17 @@ public class EducacionController {
     }
 
     @PutMapping("/educacion/editar/{id}")
-    public void putEducacion(@PathVariable Long id, @RequestParam String institucion,
-            @RequestParam int anioIngreso,
-            @RequestParam int anioFinalizacion,
-            @RequestParam String logo,
-            @RequestParam int duracion,
-            @RequestParam int materiasTotales,
-            @RequestParam int materiasAprobadas,            
-            @RequestParam String titulo) {
+    public void putEducacion(@PathVariable Long id, @RequestBody Educacion unaEd) {
         Educacion ed = interEducacion.findEducacion(id);
-        ed.setAnioIngreso(anioIngreso);
-        ed.setDuracion(duracion);
-        ed.setInstitucion(institucion);
-        ed.setMateriasAprobadas(materiasAprobadas);
-        ed.setTitulo(titulo);
-        ed.setAnioFinalizacion(anioFinalizacion);
-        ed.setLogo(logo);
-        ed.setMateriasTotales(materiasTotales);
-
+        ed.setAnioIngreso(unaEd.getAnioIngreso());
+        ed.setDuracion(unaEd.getDuracion());
+        ed.setInstitucion(unaEd.getInstitucion());
+        ed.setMateriasAprobadas(unaEd.getMateriasAprobadas());
+        ed.setTitulo(unaEd.getTitulo());
+        ed.setAnioFinalizacion(unaEd.getAnioFinalizacion());
+        ed.setLogo(unaEd.getLogo());
+        ed.setMateriasTotales(unaEd.getMateriasTotales());
+        ed.setEstado(unaEd.getEstado());
         interEducacion.saveEducacion(ed);
     }
 }

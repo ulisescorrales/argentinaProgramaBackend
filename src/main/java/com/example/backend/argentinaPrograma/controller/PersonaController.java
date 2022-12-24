@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,12 +30,12 @@ public class PersonaController {
         return interPersona.getPersona();
     }
     @PutMapping("persona/editar")
-    public void modificarPersona(@RequestParam String acercaDeMi,@RequestParam String fotoPerfil,@RequestParam String fotoFondo){        
+    public void modificarPersona(@RequestBody Persona p){        
         Persona pers=interPersona.getPersona();
         
-        pers.setSobreMi(acercaDeMi);
-        pers.setFotoPerfil(fotoPerfil);
-        pers.setFotoFondo(fotoFondo);
+        pers.setSobreMi(p.getSobreMi());
+        pers.setFotoPerfil(p.getFotoPerfil());
+        pers.setFotoFondo(p.getFotoFondo());
         
         interPersona.savePersona(pers);
     }
