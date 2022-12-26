@@ -6,11 +6,13 @@ package com.example.backend.argentinaPrograma.repository;
 
 import com.example.backend.argentinaPrograma.model.Tecnologia;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Corrales Ulises
  */
+@Repository
 public interface TecnologiaRepository extends JpaRepository<Tecnologia,Long>{
     
 }

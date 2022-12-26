@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TareaController {
 
-    @Autowired    
+    @Autowired
     private ITareaService interTarea;
 
     @GetMapping("/tarea/{idE}/tarea/traer")
@@ -37,20 +37,20 @@ public class TareaController {
     @PostMapping("/tarea/agregar")
     public void putTarea(@RequestBody Tarea t) {
         interTarea.saveTarea(t);
-    }
-    @DeleteMapping("/tarea/borrar/{id}")
-        public void deleteTarea(@PathVariable Long id){
-            interTarea.deleteTarea(id);
-        }
-        @PutMapping("/tarea/editar/{id}")
-        public void putTarea(@PathVariable Long id,
-                @RequestParam String descripcion,
-                @RequestParam String logo){
-            Tarea tarea=interTarea.findTarea(id);
-            tarea.setDescripcion(descripcion);
-            tarea.setRepositorio(descripcion);
-            
-            interTarea.saveTarea(tarea);
-        }
+    }   
 
+    @PutMapping("/tarea/editar/{id}")
+    public void putTarea(@PathVariable Long id,
+            @RequestParam String descripcion,
+            @RequestParam String logo) {
+        Tarea tarea = interTarea.findTarea(id);
+        tarea.setDescripcion(descripcion);
+        tarea.setRepositorio(descripcion);
+
+        interTarea.saveTarea(tarea);
+    }
+    @DeleteMapping("/editar/eliminar/tarea/{id}")
+    public void deleteTarea(@PathVariable Long id){
+        interTarea.deleteTarea(id);
+    }
 }
