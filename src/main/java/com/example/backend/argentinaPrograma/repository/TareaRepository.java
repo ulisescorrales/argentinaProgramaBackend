@@ -8,11 +8,13 @@ import com.example.backend.argentinaPrograma.model.Tarea;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Corrales Ulises
  */
+@Repository
 public interface TareaRepository extends JpaRepository<Tarea,Long>{
    // @Query("SELECT * FROM (experiencia JOIN tarea) WHERE idExperiencia= :idExperiencia")
    // public List<Tarea> findJoinTarea(Long idExperiencia);

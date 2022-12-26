@@ -6,11 +6,13 @@ package com.example.backend.argentinaPrograma.repository;
 
 import com.example.backend.argentinaPrograma.model.Persona;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Corrales Ulises
  */
+@Repository
 public interface PersonaRepository extends JpaRepository<Persona,Long>{
     
 }
