@@ -21,7 +21,7 @@ public class TareaService implements ITareaService{
     
     @Override
     public List<Tarea> getTarea(Long idExperiencia){
-        return tareaRepository.findJoinTarea(idExperiencia);
+        return tareaRepository.findAll();//tareaRepository.findJoinTarea(idExperiencia);
     }
     @Override
     public void saveTarea(Tarea t){
