@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.security.Dto;
+package com.example.backend.argentinaPrograma.Security.Dto;
 
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;

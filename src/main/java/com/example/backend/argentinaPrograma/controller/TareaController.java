@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.controller;
+package com.example.backend.argentinaPrograma.Controller;
 
-import com.example.backend.argentinaPrograma.model.Tarea;
-import com.example.backend.argentinaPrograma.service.ITareaService;
+import com.example.backend.argentinaPrograma.Model.Tarea;
+import com.example.backend.argentinaPrograma.Service.ITareaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,11 +35,13 @@ public class TareaController {
         return interTarea.getTarea(idE);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/tarea/agregar")
     public void putTarea(@RequestBody Tarea t) {
         interTarea.saveTarea(t);
     }   
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/tarea/editar/{id}")
     public void putTarea(@PathVariable Long id,
             @RequestParam String descripcion,
@@ -49,6 +52,7 @@ public class TareaController {
 
         interTarea.saveTarea(tarea);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/editar/eliminar/tarea/{id}")
     public void deleteTarea(@PathVariable Long id){
         interTarea.deleteTarea(id);

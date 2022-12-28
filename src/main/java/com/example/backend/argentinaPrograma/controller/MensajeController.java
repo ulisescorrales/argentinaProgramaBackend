@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.controller;
+package com.example.backend.argentinaPrograma.Controller;
 
-import com.example.backend.argentinaPrograma.model.Mensaje;
-import com.example.backend.argentinaPrograma.service.IMensajeService;
+import com.example.backend.argentinaPrograma.Model.Mensaje;
+import com.example.backend.argentinaPrograma.Service.IMensajeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,12 +38,15 @@ public class MensajeController {
     public void crearMensaje(@RequestBody Mensaje mensaje) {
         interMensaje.saveMensaje(mensaje);                
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/mensaje/borrar/{id}")
     public String deleteMensaje(@PathVariable Long id) {
         interMensaje.deleteMensaje(id);
 
         return "Mensaje eliminado";
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/mensaje/editar/{id}")
     public Mensaje editMensaje(@PathVariable Long id,
             @RequestParam("organizacion") String organizacion,

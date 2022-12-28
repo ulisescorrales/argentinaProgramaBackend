@@ -2,12 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.controller;
+package com.example.backend.argentinaPrograma.Controller;
 
-import com.example.backend.argentinaPrograma.model.Tecnologia;
-import com.example.backend.argentinaPrograma.service.ITecnologiaService;
+import com.example.backend.argentinaPrograma.Model.Tecnologia;
+import com.example.backend.argentinaPrograma.Service.ITecnologiaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +34,7 @@ public class TecnologiaController {
         return interTecnologia.getTecnologia();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/tecnologia/agregar")
     public void putEducacion(@RequestBody Tecnologia ed) {
         interTecnologia.saveTecnologia(ed);
@@ -43,6 +45,7 @@ public class TecnologiaController {
         return interTecnologia.findTecnolgia(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/tecnologia/editar/{id}")
     public void modificarTecnologia(@PathVariable Long id,
             @RequestParam String nombre,
@@ -51,6 +54,7 @@ public class TecnologiaController {
         tec.setLogo(logo);
         tec.setDescripcion(logo);
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/editar/eliminar/conocimiento/{id}")
     public void deleteTecnologia(@PathVariable Long id){
         this.interTecnologia.deleteTecnologia(id);
