@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.security;
+package com.example.backend.argentinaPrograma.Security;
 
-import com.example.backend.argentinaPrograma.security.jwt.JwtTokenFilter;
-import com.portfolio.em.Security.Service.UserDetailsImpl;
-import com.portfolio.em.Security.jwt.JwtEntryPoint;
+import com.example.backend.argentinaPrograma.Security.Service.UserDetailsImpl;
+import com.example.backend.argentinaPrograma.Security.jwt.JwtEntryPoint;
+import com.example.backend.argentinaPrograma.Security.jwt.JwtTokenFilter;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

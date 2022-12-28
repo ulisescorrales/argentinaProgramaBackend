@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.security.Service;
+package com.example.backend.argentinaPrograma.Security.Service;
 
-import com.example.backend.argentinaPrograma.security.Entity.Rol;
-import com.example.backend.argentinaPrograma.security.Enums.RolNombre;
-import com.example.backend.argentinaPrograma.security.Repository.IRolRepository;
+import com.example.backend.argentinaPrograma.Security.Entity.Rol;
+import com.example.backend.argentinaPrograma.Security.Enums.RolNombre;
+import com.example.backend.argentinaPrograma.Security.Repository.IRolRepository;
 import jakarta.transaction.Transactional;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

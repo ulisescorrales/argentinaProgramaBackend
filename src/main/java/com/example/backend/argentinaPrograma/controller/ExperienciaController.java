@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.controller;
+package com.example.backend.argentinaPrograma.Controller;
 
-import com.example.backend.argentinaPrograma.model.Experiencia;
-import com.example.backend.argentinaPrograma.service.IExperienciaService;
+import com.example.backend.argentinaPrograma.Model.Experiencia;
+import com.example.backend.argentinaPrograma.Service.IExperienciaService;
 import java.sql.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +35,7 @@ public class ExperienciaController {
         return interExperiencia.getExperiencia();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/experiencia/agregar")
     public void putEducacion(Experiencia ed) {
         interExperiencia.saveExperiencia(ed);
@@ -43,7 +45,7 @@ public class ExperienciaController {
     public Experiencia finEducacion(@PathVariable Long id) {
         return interExperiencia.findExperiencia(id);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/experiencia/editar/{id}")
     public void modificarExperiencia(@PathVariable Long id,
             @RequestBody Experiencia unaExp) {
@@ -56,6 +58,8 @@ public class ExperienciaController {
 
         interExperiencia.saveExperiencia(exp);
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/editar/eliminar/experiencia/{id}")
     public void deleteExperiencia(@PathVariable Long id){
         this.interExperiencia.deleteExperiencia(id);

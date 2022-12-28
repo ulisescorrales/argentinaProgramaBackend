@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.dto;
+package com.example.backend.argentinaPrograma.Dto;
 
-import com.example.backend.argentinaPrograma.model.Tarea;
+import com.example.backend.argentinaPrograma.Model.Tarea;
 import java.sql.Date;
 
 /**

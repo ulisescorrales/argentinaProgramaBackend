@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.security.Entity;
+package com.example.backend.argentinaPrograma.Security.Entity;
 
-import com.example.backend.argentinaPrograma.security.Enums.RolNombre;
+import com.example.backend.argentinaPrograma.Security.Enums.RolNombre;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

@@ -2,17 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.security.Controller;
+package com.example.backend.argentinaPrograma.Security.Controller;
 
-import com.example.backend.argentinaPrograma.security.Dto.JwtDto;
-import com.example.backend.argentinaPrograma.security.Dto.LoginUsuario;
-import com.example.backend.argentinaPrograma.security.Dto.NuevoUsuario;
-import com.example.backend.argentinaPrograma.security.Entity.Rol;
-import com.example.backend.argentinaPrograma.security.Entity.Usuario;
-import com.example.backend.argentinaPrograma.security.Enums.RolNombre;
-import com.example.backend.argentinaPrograma.security.Service.RolService;
-import com.example.backend.argentinaPrograma.security.Service.UsuarioService;
-import com.example.backend.argentinaPrograma.security.jwt.JwtProvider;
+import com.example.backend.argentinaPrograma.Security.Dto.JwtDto;
+import com.example.backend.argentinaPrograma.Security.Dto.LoginUsuario;
+import com.example.backend.argentinaPrograma.Security.Dto.NuevoUsuario;
+import com.example.backend.argentinaPrograma.Security.Entity.Rol;
+import com.example.backend.argentinaPrograma.Security.Entity.Usuario;
+import com.example.backend.argentinaPrograma.Security.Enums.RolNombre;
+import com.example.backend.argentinaPrograma.Security.Service.RolService;
+import com.example.backend.argentinaPrograma.Security.Service.UsuarioService;
+import com.example.backend.argentinaPrograma.Security.jwt.JwtProvider;
 import java.util.HashSet;
 import java.util.Set;
 import javax.validation.Valid;
@@ -38,7 +38,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;

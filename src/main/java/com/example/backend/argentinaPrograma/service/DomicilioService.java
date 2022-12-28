@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.service;
+package com.example.backend.argentinaPrograma.Service;
 
-import com.example.backend.argentinaPrograma.model.Domicilio;
-import com.example.backend.argentinaPrograma.repository.DomicilioRepository;
+import com.example.backend.argentinaPrograma.Model.Domicilio;
+import com.example.backend.argentinaPrograma.Repository.DomicilioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
