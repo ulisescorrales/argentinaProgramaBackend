@@ -20,14 +20,14 @@ import lombok.Setter;
 public class Educacion {
 
     @Id
-   // @GeneratedValue(strategy=GenerationType.SEQUENCE)
+   @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Long idEstudio;
     private String titulo;
     private String logo;
     private String institucion;
     private Integer anioIngreso;
     private Integer anioFinalizacion;
-    private Integer duracion;
+    private String duracion;
     private Integer materiasAprobadas;
     private Integer materiasTotales;        
     private String estado;

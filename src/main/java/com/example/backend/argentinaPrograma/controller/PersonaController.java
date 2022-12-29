@@ -26,6 +26,11 @@ public class PersonaController {
     @Autowired
     private IPersonaService interPersona;
     
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/auth/prueba")
+    public void prueba(){        
+    }
+    
     @GetMapping("/persona/traer")
     public Persona traerPersona(){
         return interPersona.getPersona();

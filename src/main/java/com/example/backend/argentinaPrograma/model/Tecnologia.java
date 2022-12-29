@@ -21,6 +21,6 @@ public class Tecnologia {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Long idTecnologia;
-    private String descripcion;
+    private String nombre;
     private String logo;
 }

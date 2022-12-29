@@ -47,7 +47,7 @@ public class EducacionController {
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/educacion/editar/{id}")
     public void putEducacion(@PathVariable Long id, @RequestBody Educacion unaEd) {
-        Educacion ed = interEducacion.findEducacion(id);
+        Educacion ed = interEducacion.findEducacion(id);        
         ed.setAnioIngreso(unaEd.getAnioIngreso());
         ed.setDuracion(unaEd.getDuracion());
         ed.setInstitucion(unaEd.getInstitucion());

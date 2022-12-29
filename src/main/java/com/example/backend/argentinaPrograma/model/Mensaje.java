@@ -20,7 +20,7 @@ import lombok.Setter;
 public class Mensaje {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)
-    private Long id;
+    private Long idMensaje;
     private String organizacion;    
     private String contacto;    
     private String mensaje;
