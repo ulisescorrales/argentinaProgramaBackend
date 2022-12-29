@@ -37,7 +37,7 @@ public class ExperienciaController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/experiencia/agregar")
-    public void putEducacion(Experiencia ed) {
+    public void putEducacion(@RequestBody Experiencia ed) {
         interExperiencia.saveExperiencia(ed);
     }
 
@@ -49,7 +49,7 @@ public class ExperienciaController {
     @PutMapping("/experiencia/editar/{id}")
     public void modificarExperiencia(@PathVariable Long id,
             @RequestBody Experiencia unaExp) {
-        Experiencia exp = interExperiencia.findExperiencia(id);
+        Experiencia exp = interExperiencia.findExperiencia(id);        
         exp.setDescripcion(unaExp.getDescripcion());
         exp.setFin(unaExp.getFin());
         exp.setInicio(unaExp.getInicio());

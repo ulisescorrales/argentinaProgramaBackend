@@ -9,6 +9,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import java.sql.Date;
+
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +28,6 @@ public class Experiencia {
     private String organizacion;
     private String descripcion;
     private String logo;
-    private Date inicio;
-    private Date fin;    
+    private String inicio;
+    private String fin;    
 }

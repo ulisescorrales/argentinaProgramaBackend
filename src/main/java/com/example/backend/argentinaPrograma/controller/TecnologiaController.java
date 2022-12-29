@@ -48,11 +48,12 @@ public class TecnologiaController {
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/tecnologia/editar/{id}")
     public void modificarTecnologia(@PathVariable Long id,
-            @RequestParam String nombre,
-            @RequestParam String logo){
+            @RequestBody Tecnologia unaTecnologia){
         Tecnologia tec=interTecnologia.findTecnolgia(id);
-        tec.setLogo(logo);
-        tec.setDescripcion(logo);
+        tec.setLogo(unaTecnologia.getLogo());
+        tec.setNombre(unaTecnologia.getNombre());
+        
+        interTecnologia.saveTecnologia(tec);
     }
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/editar/eliminar/conocimiento/{id}")
