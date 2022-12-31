@@ -4,7 +4,8 @@
  */
 package com.example.backend.argentinaPrograma.Service;
 
-import com.example.backend.argentinaPrograma.Repository.Proyecto;
+
+import com.example.backend.argentinaPrograma.Model.Proyecto;
 import java.util.List;
 
 /**

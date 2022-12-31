@@ -4,7 +4,8 @@
  */
 package com.example.backend.argentinaPrograma.Service;
 
-import com.example.backend.argentinaPrograma.Repository.Proyecto;
+
+import com.example.backend.argentinaPrograma.Model.Proyecto;
 import com.example.backend.argentinaPrograma.Repository.ProyectoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,8 @@ public class ProyectoService implements IProyectoService{
     }
 
     @Override
-    public Proyecto getProyecto(Long id) {
-        return proyectoRepository.getReferenceById(id);
+    public Proyecto getProyecto(Long id) {        
+        return proyectoRepository.findById(id).get();
     }
 
     @Override

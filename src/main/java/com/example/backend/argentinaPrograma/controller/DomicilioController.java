@@ -8,7 +8,6 @@ import com.example.backend.argentinaPrograma.Model.Domicilio;
 import com.example.backend.argentinaPrograma.Service.IDomicilioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Corrales Ulises
  */
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class DomicilioController {
     @Autowired        
