@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Corrales Ulises
  */
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class MensajeController {
 
