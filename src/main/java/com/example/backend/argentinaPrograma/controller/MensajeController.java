@@ -29,6 +29,7 @@ public class MensajeController {
     @Autowired
     private IMensajeService interMensaje;
        
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/mensaje/traer")
     public List<Mensaje> nuevoMensaje() {   
         return interMensaje.getMensajes();
@@ -43,22 +44,5 @@ public class MensajeController {
         interMensaje.deleteMensaje(id);
 
         return "Mensaje eliminado";
-    }
-    
-    @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/mensaje/editar/{id}")
-    public Mensaje editMensaje(@PathVariable Long id,
-            @RequestParam("organizacion") String organizacion,
-            @RequestParam("contacto") String contacto,
-            @RequestParam("mensaje") String mensaje){
-        Mensaje msj=interMensaje.findMensaje(id);
-        
-        msj.setOrganizacion(organizacion);
-        msj.setContacto(contacto);
-        msj.setMensaje(mensaje);
-        
-        interMensaje.saveMensaje(msj);
-        
-        return msj;
-    }
+    }        
 }
