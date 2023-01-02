@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.util.Date;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +25,7 @@ public class Mensaje {
     private String organizacion;    
     private String contacto;    
     private String mensaje;
-
+    private String fecha= (new Date()).toString();
    
     
     
