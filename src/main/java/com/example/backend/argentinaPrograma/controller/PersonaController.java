@@ -37,6 +37,8 @@ public class PersonaController {
     public void modificarPersona(@RequestBody Persona p){        
         Persona pers=interPersona.getPersona();
         
+        pers.setApellido(p.getApellido());
+        pers.setNombre(p.getNombre());
         pers.setSobreMi(p.getSobreMi());
         pers.setFotoPerfil(p.getFotoPerfil());
         pers.setFotoFondo(p.getFotoFondo());
