@@ -41,9 +41,7 @@ public class EducacionController {
 
     @GetMapping("/educacion/{id}")
     public Educacion findEducacion(@PathVariable Long id) {
-        Educacion education=interEducacion.findEducacion(id);
-        //System.out.println(education.getCertificado());
-        return education;
+        return interEducacion.findEducacion(id);
     }
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/educacion/editar/{id}")
