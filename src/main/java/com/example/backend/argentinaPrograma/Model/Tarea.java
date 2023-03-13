@@ -6,6 +6,8 @@ package com.example.backend.argentinaPrograma.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,9 +19,12 @@ import lombok.Setter;
 @Getter @Setter
 public class Tarea {
     @Id
-    private Long idTarea;
-    private Long idExperiencia;
+    private Long id_tarea;
+    private Long id_experiencia;
     private String titulo;
     private String descripcion;
     private String repositorio;
+    @ManyToOne
+    @JoinColumn(name="id_experiencia",nullable=false)
+    private Experiencia experiencia;
 }
