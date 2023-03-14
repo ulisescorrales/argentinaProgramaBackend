@@ -4,7 +4,10 @@
  */
 package com.example.backend.argentinaPrograma.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -19,12 +22,14 @@ import lombok.Setter;
 @Getter @Setter
 public class Tarea {
     @Id
-    private Long id_tarea;
-    private Long id_experiencia;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
+    private Long idTarea;
+    //private Long idExp;
     private String titulo;
     private String descripcion;
     private String repositorio;
     @ManyToOne
-    @JoinColumn(name="id_experiencia",nullable=false)
+    @JsonBackReference
+    @JoinColumn(name="id_exp")
     private Experiencia experiencia;
 }
