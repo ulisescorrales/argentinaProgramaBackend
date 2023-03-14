@@ -4,14 +4,17 @@
  */
 package com.example.backend.argentinaPrograma.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import java.util.ArrayList;
 
 import java.util.List;
+import java.util.Set;
 
 
 import lombok.Getter;
@@ -33,6 +36,6 @@ public class Experiencia {
     private String logo;
     private String inicio;
     private String fin;       
-    @OneToMany(cascade = CascadeType.ALL,mappedBy="experiencia")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy="experiencia")    
     private List<Tarea> tareas;
 }
