@@ -5,7 +5,7 @@
 package com.example.backend.argentinaPrograma.security;
 
 import com.example.backend.argentinaPrograma.security.Service.UserDetailsImpl;
-import com.example.backend.argentinaPrograma.Security.jwt.JwtEntryPoint;
+import com.example.backend.argentinaPrograma.security.jwt.JwtEntryPoint;
 import com.example.backend.argentinaPrograma.security.jwt.JwtTokenFilter;
 
 
