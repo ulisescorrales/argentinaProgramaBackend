@@ -12,6 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
  * @author Corrales Ulises
  */
 public class JwtDto {
+    //Clase que representa el token
     private String  token;
     private String bearer="Bearer";
     private String nombreUsuario;

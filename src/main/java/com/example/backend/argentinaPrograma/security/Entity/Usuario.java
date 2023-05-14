@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.Security.Entity;
+package com.example.backend.argentinaPrograma.security.Entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

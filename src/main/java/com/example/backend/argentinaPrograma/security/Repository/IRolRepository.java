@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.example.backend.argentinaPrograma.Security.Repository;
+package com.example.backend.argentinaPrograma.security.Repository;
 
-import com.example.backend.argentinaPrograma.Security.Entity.Rol;
 import com.example.backend.argentinaPrograma.Security.Enums.RolNombre;
+import com.example.backend.argentinaPrograma.security.Entity.Rol;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

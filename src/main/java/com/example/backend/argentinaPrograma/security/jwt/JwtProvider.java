@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.Security.jwt;
+package com.example.backend.argentinaPrograma.security.jwt;
 
-import com.example.backend.argentinaPrograma.Security.Entity.UsuarioPrincipal;
+import com.example.backend.argentinaPrograma.security.Entity.UsuarioPrincipal;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;

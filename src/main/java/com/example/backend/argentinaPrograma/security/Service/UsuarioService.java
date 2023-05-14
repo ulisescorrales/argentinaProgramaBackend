@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.example.backend.argentinaPrograma.Security.Service;
+package com.example.backend.argentinaPrograma.security.Service;
 
-import com.example.backend.argentinaPrograma.Security.Entity.Usuario;
-import com.example.backend.argentinaPrograma.Security.Repository.IUsuarioRepository;
+import com.example.backend.argentinaPrograma.security.Entity.Usuario;
+import com.example.backend.argentinaPrograma.security.Repository.IUsuarioRepository;
 import jakarta.transaction.Transactional;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +34,8 @@ public class UsuarioService {
     
     public void save(Usuario usuario){
         iusuarioRepository.save(usuario);
+    }
+    public void delete(String nombreUsuario){        
+        iusuarioRepository.delete(iusuarioRepository.findByNombreUsuario(nombreUsuario).get());
     }
 }
