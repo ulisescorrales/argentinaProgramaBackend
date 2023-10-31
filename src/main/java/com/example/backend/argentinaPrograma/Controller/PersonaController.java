@@ -6,6 +6,7 @@ package com.example.backend.argentinaPrograma.Controller;
 
 import com.example.backend.argentinaPrograma.Model.Persona;
 import com.example.backend.argentinaPrograma.Service.IPersonaService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,30 +20,35 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class PersonaController {
-    
+
     @Autowired
     private IPersonaService interPersona;
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/auth/prueba")
-    public void prueba(){        
+    public void prueba() {
     }
-    
+
     @GetMapping("/persona/traer")
-    public Persona traerPersona(){
+    public Persona traerPersona(HttpServletRequest request) {
+        String remoteAddress = request.getRemoteAddr();
+
+        System.out.println(remoteAddress);
+        
         return interPersona.getPersona();
     }
+
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("persona/editar")
-    public void modificarPersona(@RequestBody Persona p){        
-        Persona pers=interPersona.getPersona();
-        
+    public void modificarPersona(@RequestBody Persona p) {
+        Persona pers = interPersona.getPersona();
+
         pers.setApellido(p.getApellido());
         pers.setNombre(p.getNombre());
         pers.setSobreMi(p.getSobreMi());
         pers.setFotoPerfil(p.getFotoPerfil());
         pers.setFotoFondo(p.getFotoFondo());
-        
+
         interPersona.savePersona(pers);
     }
 }

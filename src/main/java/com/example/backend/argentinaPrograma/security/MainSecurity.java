@@ -51,13 +51,13 @@ public class MainSecurity {
                 .authorizeHttpRequests()
                 .requestMatchers("/**").permitAll()                
                 .anyRequest().authenticated()                                ;
-        http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);        
         return http.build();
     }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-            throws Exception {
+            throws Exception {        
         return authenticationConfiguration.getAuthenticationManager();
     }
 
