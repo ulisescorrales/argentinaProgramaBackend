@@ -4,13 +4,8 @@
  */
 package com.porfolio.backend.argentinaPrograma.Controller;
 
-<<<<<<< HEAD:src/main/java/com/example/backend/argentinaPrograma/Controller/PersonaController.java
-import com.example.backend.argentinaPrograma.Model.Persona;
-import com.example.backend.argentinaPrograma.Service.IPersonaService;
-=======
 import com.porfolio.backend.argentinaPrograma.Model.Persona;
 import com.porfolio.backend.argentinaPrograma.Service.IPersonaService;
->>>>>>> detectarIP:src/main/java/com/porfolio/backend/argentinaPrograma/Controller/PersonaController.java
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
