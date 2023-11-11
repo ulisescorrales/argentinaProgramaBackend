@@ -1,4 +1,4 @@
-package com.example.backend.argentinaPrograma;
+package com.porfolio.backend.argentinaPrograma;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
