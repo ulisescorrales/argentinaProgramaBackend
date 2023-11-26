@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,12 +32,13 @@ public class PersonaController {
     }
 
     @GetMapping("/persona/traer")
-    public Persona traerPersona(HttpServletRequest request) {
-        String remoteAddress = request.getRemoteAddr();
-
-        System.out.println(remoteAddress);
+    public Persona traerPersona() {        
         
         return interPersona.getPersona();
+    }
+    @PostMapping("/persona/auth")
+    public void mostrarIP(@RequestBody String ip) {        
+        System.out.println(ip);              
     }
 
     @PreAuthorize("hasRole('ADMIN')")
