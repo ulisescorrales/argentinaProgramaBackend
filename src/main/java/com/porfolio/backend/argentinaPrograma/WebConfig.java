@@ -18,7 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedOrigins("https://ulises-corrales-ap.web.app/")
+        registry.addMapping("/**").allowedOrigins("https://ulises-corrales-ap.web.app/","*")
                             .allowedMethods("*");        
     }
 }
