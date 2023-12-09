@@ -1,2 +1,3 @@
 src/main/java/com/porfolio/backend/argentinaPrograma/WebConfig.java merge=ours
 target/argentinaProgramaBackend-0.0.2-SNAPSHOT.jar merge=ours
+src/main/resources/application.properties merge=ours
