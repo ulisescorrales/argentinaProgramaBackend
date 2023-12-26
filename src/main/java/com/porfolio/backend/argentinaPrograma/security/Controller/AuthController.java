@@ -123,4 +123,8 @@ public class AuthController {
         }
         return respuesta;
     }
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/login/verificarToken")
+    public void verificarToken(){           
+    }
 }

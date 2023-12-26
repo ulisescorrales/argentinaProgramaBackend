@@ -5,6 +5,7 @@
 package com.porfolio.backend.argentinaPrograma.Controller;
 
 import com.porfolio.backend.argentinaPrograma.Model.Proyecto;
+import com.porfolio.backend.argentinaPrograma.Model.TareaProyecto;
 import com.porfolio.backend.argentinaPrograma.Service.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,31 +24,40 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class ProyectoController {
+
     @Autowired
     private IProyectoService interProyecto;
-    
-   
+
     @GetMapping("/proyecto/traer")
-    public List<Proyecto> getAllProyectos(){
+    public List<Proyecto> getAllProyectos() {
         return interProyecto.getAllProyectos();
     }
+
     @GetMapping("/proyecto/traer/{id}")
-    public Proyecto getProyecto(@PathVariable Long id){        
+    public Proyecto getProyecto(@PathVariable Long id) {
         return interProyecto.getProyecto(id);
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/proyecto/agregar")
-    public  void saveProyecto(@RequestBody Proyecto proyecto){
+    public void saveProyecto(@RequestBody Proyecto proyecto) {
+        List<TareaProyecto> tareas = proyecto.getTareas();
+        if (tareas != null) {
+            int longitud = tareas.size();
+            for (int i = 0; i < longitud; i++) {
+                tareas.get(i).setProyecto(proyecto);
+            }
+        }
+
         interProyecto.saveProyecto(proyecto);
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/proyecto/editar/{id}")
     public void putProyectyo(@PathVariable Long id,
-            @RequestBody Proyecto proyecto){
-        Proyecto p=interProyecto.getProyecto(id);
-        
+            @RequestBody Proyecto proyecto) {
+        Proyecto p = interProyecto.getProyecto(id);
+
         p.setNombre(proyecto.getNombre());
         p.setDescripcion(proyecto.getDescripcion());
         p.setGithub(proyecto.getGithub());
@@ -55,12 +65,13 @@ public class ProyectoController {
         p.setGithubBackEnd(proyecto.getGithubBackEnd());
         p.setGithubFrontEnd(proyecto.getGithubFrontEnd());
         p.setLogo(proyecto.getLogo());
+        p.setTareas(proyecto.getTareas());
         interProyecto.saveProyecto(p);
     }
-    
+
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("editar/eliminar/proyecto/{id}")
-    public void deleteProyecto(@PathVariable Long id){
+    public void deleteProyecto(@PathVariable Long id) {
         interProyecto.deleteProyecto(id);
     }
 }
