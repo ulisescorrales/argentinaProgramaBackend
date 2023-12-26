@@ -4,16 +4,22 @@
  */
 package com.porfolio.backend.argentinaPrograma.Service;
 
-import com.porfolio.backend.argentinaPrograma.Model.Tarea;
+import com.porfolio.backend.argentinaPrograma.Model.TareaExperiencia;
+import com.porfolio.backend.argentinaPrograma.Model.TareaProyecto;
 import java.util.List;
 
 /**
  *
  * @author Corrales Ulises
  */
-public interface ITareaService {
-    public List<Tarea> getTarea(Long idExp);
-    public void saveTarea(Tarea t);
-    public Tarea findTarea(Long id);
-    public void deleteTarea(Long id);
+public interface ITareaService {    
+    
+    public List<TareaProyecto> getTareaProyecto(Long idP);
+    public List<TareaExperiencia> getTareaExperiencia(Long idE);
+    public void saveTareaProyecto(TareaProyecto t);
+    public void saveTareaExperiencia(TareaExperiencia t);
+    public TareaProyecto findTareaProyecto(Long id);
+    public TareaExperiencia findTareaExperiencia(Long id);
+    public void deleteTareaProyecto(Long id);
+    public void deleteTareaExperiencia(Long id);
 }

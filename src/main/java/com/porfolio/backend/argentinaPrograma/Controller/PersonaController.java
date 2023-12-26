@@ -35,11 +35,7 @@ public class PersonaController {
     public Persona traerPersona() {        
         
         return interPersona.getPersona();
-    }
-    @PostMapping("/persona/auth")
-    public void mostrarIP(@RequestBody String ip) {        
-        System.out.println(ip);              
-    }
+    }    
 
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("persona/editar")

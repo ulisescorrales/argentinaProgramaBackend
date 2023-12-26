@@ -4,17 +4,14 @@
  */
 package com.porfolio.backend.argentinaPrograma.Model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import java.util.ArrayList;
 
 import java.util.List;
-import java.util.Set;
 
 
 import lombok.Getter;
@@ -28,8 +25,8 @@ import lombok.Setter;
 @Getter @Setter
 public class Experiencia {
     @Id
-    @GeneratedValue(strategy=GenerationType.SEQUENCE)
-    private Long idExperiencia;
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)    
+    private Integer idExperiencia;
     private String titulo;
     private String organizacion;
     private String descripcion;
@@ -37,5 +34,5 @@ public class Experiencia {
     private String inicio;
     private String fin;       
     @OneToMany(cascade = CascadeType.ALL,mappedBy="experiencia")    
-    private List<Tarea> tareas;
+    private List<TareaExperiencia> tareas;
 }
