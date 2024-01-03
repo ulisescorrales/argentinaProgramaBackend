@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface ExperienciaRepository extends JpaRepository<Experiencia,Integer>{
+public interface ExperienciaRepository extends JpaRepository<Experiencia,Long>{
     
     
 }
