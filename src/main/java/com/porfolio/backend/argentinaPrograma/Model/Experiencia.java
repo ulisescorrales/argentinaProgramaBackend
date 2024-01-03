@@ -26,7 +26,7 @@ import lombok.Setter;
 public class Experiencia {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE)    
-    private Integer idExperiencia;
+    private Long idExperiencia;
     private String titulo;
     private String organizacion;
     private String descripcion;

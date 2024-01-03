@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import javax.annotation.Nullable;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,8 +26,9 @@ public class Educacion {
     private String titulo;
     private String logo;
     private String institucion;
-    private Integer anioIngreso;
-    private Integer anioFinalizacion;
+    @Nullable
+    private String anioIngreso;
+    private String anioFinalizacion;
     private String duracion;
     private Integer materiasAprobadas;
     private Integer materiasTotales;        
